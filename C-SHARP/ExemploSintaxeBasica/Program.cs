@@ -25,4 +25,3 @@ Console.WriteLine("Olá\nmundo!");
 Console.WriteLine("Olá\tmundo");
 Console.WriteLine("Olá \"mundo\"");
 Console.WriteLine("C:\\documentos\\GitHub");*/
-

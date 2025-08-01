@@ -1,11 +1,13 @@
 ﻿using ApiAulaEntra21.Data;
 using ApiAulaEntra21.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiAulaEntra21.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
+    [Authorize]
     public class LojaController : ControllerBase
     {
         private readonly AppDbContext _context;

@@ -2,6 +2,7 @@
 using ApiAulaEntra21.Data;
 using ApiAulaEntra21.Models;
 using ApiAulaEntra21.Models.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ namespace ApiAulaEntra21.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
+    [Authorize]
     public class ProdutoController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -57,7 +59,7 @@ namespace ApiAulaEntra21.Controllers
                            where produto.LojaId == lojaId
                            select new
                            {
-                               Nome = produto.Nome,
+                               NomeProduto = produto.Nome,
                                Quantidade = produto.QuantidadeEstoque,
                                Marca = produto.Marca,
                                NomeLoja = loja.Nome
